@@ -1,0 +1,31 @@
+Create Node
+CREATE (n:Continent:Country:Internaltional_Group:Party:Person:Personel_Group)
+CREATE CONSTRAINT ON (n:Continent) ASSERT n.name IS UNIQUE
+CREATE CONSTRAINT ON (n:Country) ASSERT n.name IS UNIQUE
+CREATE CONSTRAINT ON (n:Party) ASSERT n.name IS UNIQUE
+CREATE CONSTRAINT ON (n:Internaltional_Group) ASSERT n.name IS UNIQUE
+CREATE CONSTRAINT ON (n:Person) ASSERT n.name IS UNIQUE
+CREATE CONSTRAINT ON (n:Personel_Group) ASSERT n.name IS UNIQUE
+CREATE CONSTRAINT ON (n:Event) ASSERT n.name IS UNIQUE
+
+# Create Index
+CREATE INDEX ON :Person(name)
+CREATE INDEX ON :Continent(name)
+CREATE INDEX ON :Internaltional_Group(name)
+CREATE INDEX ON :Party(name)
+CREATE INDEX ON :Person(name)
+CREATE INDEX ON :Personel_Group(name)
+
+
+#Create Relationship Constrains
+CREATE CONSTRAINT ON ()-[r:OPPOSITION]-() ASSERT exists(r.name)
+CREATE CONSTRAINT ON ()-[r:ALLIANCE]-() ASSERT exists(r.name)
+CREATE CONSTRAINT ON ()-[r:SUPPORTING]-() ASSERT exists(r.name)
+CREATE CONSTRAINT ON ()-[r:WORK_FOR]-() ASSERT exists(r.name)
+CREATE CONSTRAINT ON ()-[r:PART_IN]-() ASSERT exists(r.name)
+CREATE CONSTRAINT ON ()-[r:LEADER_OF]-() ASSERT exists(r.name)
+
+
+
+
+

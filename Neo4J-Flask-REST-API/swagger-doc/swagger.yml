@@ -1,0 +1,1360 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger REST Article
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/api"
+
+# Paths supported by the server application
+paths:
+  /nodes:
+    post:
+      operationId: api.controllers.nodes.create_node
+      produces:
+        - "application/json"
+      tags:
+        - Nodes
+      summary: Create Nodes
+      description: Create Nodes
+      parameters:
+      - name: node
+        in: body
+        required: true
+        description: The json defined node
+        schema:
+          type: object
+          $ref: "#/definitions/NODE"
+      responses:
+        200:
+          description: "Success"
+    put:
+      operationId: api.controllers.nodes.update_node
+      produces:
+        - "application/json"
+      tags:
+        - Nodes
+      summary: Update Nodes
+      description: Update Nodes
+      parameters:
+      - name: node
+        in: body
+        description: The list of labels has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/NODE"
+      responses:
+        200:
+          description: "Success"
+    get:
+      operationId: api.controllers.nodes.find_all_labels_node
+      produces:
+        - "application/json"
+      tags:
+        - Nodes
+      summary: Find All Labels Nodes
+      description: Find All Labels Nodes
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: object
+  /relationships:
+    post:
+      operationId: api.controllers.relationships.create_relationship
+      produces:
+        - "application/json"
+      tags:
+        - Relationships
+      summary: Create Relationships
+      description: Create Relationships
+      parameters:
+      - name: rels
+        in: body
+        required: true
+        description: The list of labels has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/RELATIONSHIPS"
+      responses:
+        200:
+          description: "Success"
+    put:
+      operationId: api.controllers.relationships.update_relationship
+      produces:
+        - "application/json"
+      tags:
+        - Relationships
+      summary: Update Relationships
+      description: Update Relationships
+      parameters:
+      - name: rels
+        in: body
+        description: The list of labels has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/RELATIONSHIPS"
+      responses:
+        200:
+          description: "Success"
+    get:
+      operationId: api.controllers.relationships.find_all_relationship_type
+      produces:
+        - "application/json"
+      tags:
+        - Relationships
+      summary: Find All Relationship type
+      description: Find All Relationship type
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: object
+  /node/find_all_fileds_keys:
+    put:
+      operationId: api.controllers.nodes.find_all_node_field
+      produces:
+        - "application/json"
+      tags:
+        - Nodes
+      summary: Find All Feild Nodes
+      description: Find All Feild Nodes
+      parameters:
+      - name: labels
+        in: body
+        description: The list of labels has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/NODE"
+      responses:
+        200:
+          description: "Success"
+  /node/find_all_feild_value:
+    put:
+      operationId: api.controllers.nodes.find_all_progesties_with_field
+      produces:
+        - "application/json"
+      tags:
+        - Nodes
+      summary: Find All Progesties with Name Feilds Nodes
+      description: Find All Progesties with Name Feilds Nodes
+      parameters:
+      - name: node
+        in: body
+        description: The list of labels has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/NODE"
+      responses:
+        200:
+          description: "Success"
+#  /relationship:
+#    post:
+#      operationId: api.controllers.relationship.create_relationship
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Relationship
+#      summary: Create Relationship
+#      description: Create Relationship
+#      parameters:
+#      - name: rels
+#        in: body
+#        required: true
+#        schema:
+#          $ref: '#/definitions/RELATIONSHIP'
+#      responses:
+#        200:
+#          description: "Create Relationship Success"
+#          schema:
+#            type: object
+#            $ref: '#/definitions/RELATIONSHIP'
+#        201:
+#          description: "Create Relationship Fail"
+#
+#  /relationship/findRelationWithNameLabel/{name}:
+#    get:
+#      operationId: api.controllers.relationship.find_relationship
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Relationship
+#      summary: Find All Relationship
+#      description: Find All Relationship
+#      parameters:
+#      - name: labels
+#        in: query
+#        required: true
+#        type: string
+#        description: Labels of Relationship
+##        enum:
+##          - opposition
+##          - alliance
+##          - supporting
+##          - work_for
+##          - part_in
+##          - leader_of
+#      - name: name
+#        in: path
+#        type: string
+#        required: true
+#        description: Name of Relationship
+#      responses:
+#        200:
+#          description: "Create Relationship Success"
+#          schema:
+#            type: object
+#  # CONTINENT
+#  /continent:
+#    post:
+#      operationId: api.controllers.continent.create_continent
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Continent
+#      summary: Create Continent
+#      description: Create Continent
+#      parameters:
+#      - name: continents
+#        in: body
+#        required: true
+#        schema:
+#          $ref: '#/definitions/CONTINENT'
+#      responses:
+#        201:
+#          description: "Create NODE Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/CONTINENT"
+#    get:
+#      operationId: api.controllers.continent.find_all_continent
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Continent
+#      summary: Find all Continent
+#      description: Find all Continent
+##      parameters:
+#      responses:
+#        201:
+#          description: "Find Continent Success"
+#          schema:
+#            type: array
+#            items:
+#              $ref: "#/definitions/CONTINENT"
+#  /continent/{key}:
+#    get:
+#      operationId: api.controllers.continent.find_continent_with_key
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Continent
+#      summary: Find One Continent
+#      description: Find One Continent
+#      parameters:
+#      - name: key
+#        in: path
+#        required: true
+#        description: The continent's continent_id
+#        type: string
+#      responses:
+#        200:
+#          description: "Find Continent Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/CONTINENT"
+#    put:
+#      operationId: api.controllers.continent.update_continent
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Continent
+#      summary: Update One Continent
+#      description: Update One Continent
+#      parameters:
+#      - in: path
+#        name: key
+#        type: string
+#        description: The id of the continent you want to update.
+#        required: true
+#      - in: body
+#        name: continents
+#        description: The continent you want update with.
+#        required: true
+#        schema:
+#          $ref: '#/definitions/CONTINENT'
+#      responses:
+#        200:
+#          description: "Find NODE Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/CONTINENT"
+#    delete:
+#      operationId: api.controllers.continent.delete_continent
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Continent
+#      summary: Delete One Continent
+#      description: Delete One Continent
+#      parameters:
+#      - in: path
+#        name: key
+#        type: string
+#        description: The key of the continent you want to delete.
+#        required: true
+#      responses:
+#        200:
+#          description: "Delete Continent Success"
+#  # COUNTRY
+#  /country:
+#    post:
+#      operationId: api.controllers.country.create_country
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Country
+#      summary: Create Country
+#      description: Create Country
+#      parameters:
+#      - name: countrys
+#        in: body
+#        required: true
+#        schema:
+#          $ref: '#/definitions/COUNTRY'
+#      responses:
+#        201:
+#          description: "Create Country Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/COUNTRY"
+#    get:
+#      operationId: api.controllers.country.find_all_country
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Country
+#      summary: Find all Country
+#      description: Find all Country
+#      #      parameters:
+#      responses:
+#        201:
+#          description: "Find Country Success"
+#          schema:
+#            type: array
+#            items:
+#              $ref: "#/definitions/COUNTRY"
+#  /country/{key}:
+#    get:
+#      operationId: api.controllers.country.find_country_with_key
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Country
+#      summary: Find One Country
+#      description: Find One Country
+#      parameters:
+#      - name: key
+#        in: path
+#        required: true
+#        description: The country's country_id
+#        type: string
+#      responses:
+#        200:
+#          description: "Find COUNTRY Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/COUNTRY"
+#    put:
+#      operationId: api.controllers.country.update_country
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Country
+#      summary: Update One Country
+#      description: Update One Country
+#      parameters:
+#      - in: path
+#        name: key
+#        type: string
+#        description: The id of the country you want to update.
+#        required: true
+#      - in: body
+#        name: countrys
+#        description: The country you want update with.
+#        required: true
+#        schema:
+#          $ref: '#/definitions/COUNTRY'
+#      responses:
+#        200:
+#          description: "Find Country Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/COUNTRY"
+#    delete:
+#      operationId: api.controllers.country.delete_country
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Country
+#      summary: Delete One Country
+#      description: Delete One Country
+#      parameters:
+#      - in: path
+#        name: key
+#        type: string
+#        description: The key of the country you want to delete.
+#        required: true
+#      responses:
+#        200:
+#          description: "Delete Country Success"
+#        201:
+#          description: "Delete Relationship Fail"
+#  # INTERNALTIONAL_GROUP
+#  /internaltional_group:
+#    post:
+#      operationId: api.controllers.internaltional_group.create_internaltional_group
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Internaltional Group
+#      summary: Create Internaltional Group
+#      description: Create Internaltional Ggroup
+#      parameters:
+#      - name: internaltional_groups
+#        in: body
+#        required: true
+#        schema:
+#          $ref: '#/definitions/INTERNALTIONAL_GROUP'
+#      responses:
+#        201:
+#          description: "Create Internaltional Group Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/INTERNALTIONAL_GROUP"
+#    get:
+#      operationId: api.controllers.internaltional_group.find_all_internaltional_group
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Internaltional Group
+#      summary: Find all Internaltional Group
+#      description: Find all Internaltional Group
+#      #      parameters:
+#      responses:
+#        201:
+#          description: "Find Internaltional Group Success"
+#          schema:
+#            type: array
+#            items:
+#              $ref: "#/definitions/INTERNALTIONAL_GROUP"
+#  /internaltional_group/{key}:
+#    get:
+#      operationId: api.controllers.internaltional_group.find_internaltional_group_with_key
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Internaltional Group
+#      summary: Find One Internaltional Group
+#      description: Find One Internaltional Group
+#      parameters:
+#      - name: key
+#        in: path
+#        required: true
+#        description: The internaltional_group's internaltional_group_id
+#        type: string
+#      responses:
+#        200:
+#          description: "Find internaltional_group Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/INTERNALTIONAL_GROUP"
+#    put:
+#      operationId: api.controllers.internaltional_group.update_internaltional_group
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Internaltional Group
+#      summary: Update One Internaltional Group
+#      description: Update One Internaltional Group
+#      parameters:
+#      - in: path
+#        name: key
+#        type: string
+#        description: The id of the internaltional_group you want to update.
+#        required: true
+#      - in: body
+#        name: countrys
+#        description: The internaltional_group you want update with.
+#        required: true
+#        schema:
+#          $ref: '#/definitions/INTERNALTIONAL_GROUP'
+#      responses:
+#        200:
+#          description: "Find internaltional_group Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/INTERNALTIONAL_GROUP"
+#    delete:
+#      operationId: api.controllers.internaltional_group.delete_internaltional_group
+#      produces:
+#        - "application/json"
+#      tags:
+#          - Internaltional Group
+#      summary: Delete One Internaltional Group
+#      description: Delete One Internaltional Group
+#      parameters:
+#      - in: path
+#        name: key
+#        type: string
+#        description: The key of the internaltional_group you want to delete.
+#        required: true
+#      responses:
+#        200:
+#          description: "Delete Internaltional Group Success"
+#        201:
+#          description: "Delete Relationship Fail"
+#  # PARTY
+#  /party:
+#    post:
+#      operationId: api.controllers.party.create_party
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Party
+#      summary: Create Party
+#      description: Create Party
+#      parameters:
+#      - name: partys
+#        in: body
+#        required: true
+#        schema:
+#          $ref: '#/definitions/PARTY'
+#      responses:
+#        201:
+#          description: "Create Party Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/PARTY"
+#    get:
+#      operationId: api.controllers.party.find_all_party
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Party
+#      summary: Find all Party
+#      description: Find all Party
+#      #      parameters:
+#      responses:
+#        201:
+#          description: "Find Party Success"
+#          schema:
+#            type: array
+#            items:
+#              $ref: "#/definitions/PARTY"
+#  /party/{key}:
+#    get:
+#      operationId: api.controllers.party.find_party_with_key
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Party
+#      summary: Find One Party
+#      description: Find One Party
+#      parameters:
+#      - name: key
+#        in: path
+#        required: true
+#        description: The party's party_id
+#        type: string
+#      responses:
+#        200:
+#          description: "Find PARTY Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/PARTY"
+#    put:
+#      operationId: api.controllers.party.update_party
+#      produces:
+#      - "application/json"
+#      tags:
+#        - Party
+#      summary: Update One Party
+#      description: Update One Party
+#      parameters:
+#      - in: path
+#        name: key
+#        type: string
+#        description: The id of the party you want to update.
+#        required: true
+#      - in: body
+#        name: partys
+#        description: The party you want update with.
+#        required: true
+#        schema:
+#          $ref: '#/definitions/PARTY'
+#      responses:
+#        200:
+#          description: "Find Party Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/PARTY"
+#    delete:
+#      operationId: api.controllers.party.delete_party
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Party
+#      summary: Delete One Party
+#      description: Delete One Party
+#      parameters:
+#      - in: path
+#        name: key
+#        type: string
+#        description: The key of the party you want to delete.
+#        required: true
+#      responses:
+#        200:
+#          description: "Delete Party Success"
+#        201:
+#          description: "Delete Party Fail"
+#  # PERSON
+#  /person:
+#    post:
+#      operationId: api.controllers.person.create_person
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Person
+#      summary: Create Person
+#      description: Create Person
+#      parameters:
+#      - name: persons
+#        in: body
+#        required: true
+#        schema:
+#          $ref: '#/definitions/PERSON'
+#      responses:
+#        201:
+#          description: "Create Person Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/PERSON"
+#    get:
+#      operationId: api.controllers.person.find_all_person
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Person
+#      summary: Find all Person
+#      description: Find all Person
+#      #      parameters:
+#      responses:
+#        201:
+#          description: "Find Person Success"
+#          schema:
+#            type: array
+#            items:
+#              $ref: "#/definitions/PERSON"
+#  /person/{key}:
+#    get:
+#      operationId: api.controllers.person.find_person_with_key
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Person
+#      summary: Find One Person
+#      description: Find One Person
+#      parameters:
+#      - name: key
+#        in: path
+#        required: true
+#        description: The person's person_id
+#        type: string
+#      responses:
+#        200:
+#          description: "Find PERSON Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/PERSON"
+#    put:
+#      operationId: api.controllers.person.update_person
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Person
+#      summary: Update One Person
+#      description: Update One Person
+#      parameters:
+#      - in: path
+#        name: key
+#        type: string
+#        description: The id of the person you want to update.
+#        required: true
+#      - in: body
+#        name: persons
+#        description: The person you want update with.
+#        required: true
+#        schema:
+#          $ref: '#/definitions/PERSON'
+#      responses:
+#        200:
+#          description: "Find Person Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/PERSON"
+#    delete:
+#      operationId: api.controllers.person.delete_person
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Person
+#      summary: Delete One Person
+#      description: Delete One Person
+#      parameters:
+#      - in: path
+#        name: key
+#        type: string
+#        description: The key of the person you want to delete.
+#        required: true
+#      responses:
+#        200:
+#          description: "Delete Person Success"
+#        201:
+#          description: "Delete Person Fail"
+#  # PERSONEL GROUP
+#  /personel_group:
+#    post:
+#      operationId: api.controllers.personel_group.create_personel_group
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Personel Group
+#      summary: Create Personel Group
+#      description: Create Personel Group
+#      parameters:
+#      - name: personel_groups
+#        in: body
+#        required: true
+#        schema:
+#            $ref: '#/definitions/PERSONEL_GROUP'
+#      responses:
+#        201:
+#          description: "Create Personel Group Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/PERSONEL_GROUP"
+#    get:
+#      operationId: api.controllers.personel_group.find_all_personel_group
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Personel Group
+#      summary: Find all Personel Group
+#      description: Find all Personel Group
+#      #      parameters:
+#      responses:
+#        201:
+#          description: "Find Personel Group Success"
+#          schema:
+#            type: array
+#            items:
+#              $ref: "#/definitions/PERSONEL_GROUP"
+#  /personel_group/{key}:
+#    get:
+#      operationId: api.controllers.personel_group.find_personel_group_with_key
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Personel Group
+#      summary: Find One Personel Group
+#      description: Find One Personel Group
+#      parameters:
+#      - name: key
+#        in: path
+#        required: true
+#        description: The personel_group's personel_group_id
+#        type: string
+#      responses:
+#        200:
+#          description: "Find PERSONEL_GROUP Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/PERSONEL_GROUP"
+#    put:
+#      operationId: api.controllers.personel_group.update_personel_group
+#      produces:
+#        - "application/json"
+#      tags:
+#        - Personel Group
+#      summary: Update One Personel Group
+#      description: Update One Personel Group
+#      parameters:
+#      - in: path
+#        name: key
+#        type: string
+#        description: The id of the personel group you want to update.
+#        required: true
+#      - in: body
+#        name: personel_groups
+#        description: The personel group you want update with.
+#        required: true
+#        schema:
+#          $ref: '#/definitions/PERSONEL_GROUP'
+#      responses:
+#        200:
+#          description: "Find Personel Group group Success"
+#          schema:
+#            type: object
+#            $ref: "#/definitions/PERSONEL_GROUP"
+#    delete:
+#      operationId: api.controllers.personel_group.delete_personel_group
+#      produces:
+#        - "application/json"
+#      tags:
+#          - Personel Group
+#      summary: Delete One Personel Group
+#      description: Delete One Personel Group
+#      parameters:
+#      - in: path
+#        name: key
+#        type: string
+#        description: The key of the personel group you want to delete.
+#        required: true
+#      responses:
+#        200:
+#          description: "Delete Personel Group Success"
+#        201:
+#          description: "Delete Personel Group Fail"
+  # EVENT
+  /event:
+    post:
+      operationId: api.controllers.event.create_event
+      produces:
+        - "application/json"
+      tags:
+        - Event
+      summary: Create Event
+      description: Create Event
+      parameters:
+      - name: events
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/EVENT'
+      responses:
+        201:
+          description: "Create Event Success"
+          schema:
+            type: object
+            $ref: "#/definitions/EVENT"
+    get:
+      operationId: api.controllers.event.find_all_event
+      produces:
+        - "application/json"
+      tags:
+        - Event
+      summary: Find all Event
+      description: Find all Event
+      #      parameters:
+      responses:
+        201:
+          description: "Find Event Success"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/EVENT"
+  /event/{key}:
+    get:
+      operationId: api.controllers.event.find_event_with_key
+      produces:
+        - "application/json"
+      tags:
+        - Event
+      summary: Find One Event
+      description: Find One Event
+      parameters:
+      - name: key
+        in: path
+        required: true
+        description: The event's event_id
+        type: string
+      responses:
+        200:
+          description: "Find Event Success"
+          schema:
+            type: object
+            $ref: "#/definitions/EVENT"
+    put:
+      operationId: api.controllers.event.update_event
+      produces:
+        - "application/json"
+      tags:
+        - Event
+      summary: Update One Event
+      description: Update One Event
+      parameters:
+      - in: path
+        name: key
+        type: string
+        description: The id of the event you want to update.
+        required: true
+      - in: body
+        name: persons
+        description: The event you want update with.
+        required: true
+        schema:
+          $ref: '#/definitions/EVENT'
+      responses:
+        200:
+          description: "Find Event Success"
+          schema:
+            type: object
+            $ref: "#/definitions/EVENT"
+    delete:
+      operationId: api.controllers.event.delete_event
+      produces:
+        - "application/json"
+      tags:
+        - Event
+      summary: Delete One Event
+      description: Delete One Event
+      parameters:
+      - in: path
+        name: key
+        type: string
+        description: The key of the event you want to delete.
+        required: true
+      responses:
+        200:
+          description: "Delete Event Success"
+        201:
+          description: "Delete Event Fail"
+  /search/object_event:
+    put:
+      operationId: api.controllers.search_neo4j.export_one_object_same_event
+      produces:
+        - "application/json"
+      tags:
+        - Search
+      summary: Find objects that are related to the event
+      description: Find objects that are related to the event and objects related to them
+      parameters:
+      - name: list_label
+        in: query
+        type: array
+        required: true
+        description: The list of labels has been defined(Continent, Country, Internaltional_Group, Party, Person, Personel_Group)
+        items:
+          type: string
+      - name: list_object
+        in: query
+        type: array
+        description: List of object names with similar names
+        required: true
+        items:
+          type: string
+      - name: list_rel
+        in: query
+        type: array
+        required: true
+        description: The list of relationship names has been defined
+        items:
+          type: string
+      - name: list_name_event
+        in: query
+        type: array
+        required: true
+        description: List of similar event names
+        items:
+          type: string
+      - name: limit
+        in: query
+        type: integer
+        required: true
+        description: Limit depth to tracking objects or events
+      - name: follow
+        in: query
+        type: integer
+        required: true
+        description: Objects to track (1 is the object, 2 is the event)
+        enum:
+          - 1
+          - 2
+      - in: body
+        name: conditions
+        required: true
+        schema:
+          type: object
+          properties:
+            from_date:
+              type: string
+              format: date
+              description: From Datetime of Event
+              minLength: 0
+              maxLength: 10
+              default: ''
+              example: "2019-10-10"
+            to_date:
+              type: string
+              format: date
+              description: To Datetime of Event
+              minLength: 0
+              maxLength: 10
+              default: ''
+              example: "2019-10-10"
+      responses:
+        200:
+          description: "Success"
+        201:
+          description: "Fail"
+
+  /search_in_neo4j:
+    put:
+      operationId: api.controllers.search_neo4j.search_neo4j_by_json
+      produces:
+        - "application/json"
+      tags:
+        - Search
+      summary: Find objects that are related to the event
+      description: Find objects that are related to the event and objects related to them
+      parameters:
+      - name: conditions
+        in: body
+        required: true
+        description: The list of labels has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/NEO4J_CONDITIONS"
+      responses:
+        200:
+          description: "Success"
+        201:
+          description: "Fail"
+
+  /import_data:
+    put:
+      operationId: api.controllers.import_data.import_data_csv
+      produces:
+        - "application/json"
+      tags:
+        - Import
+      summary: Add data from the csv file
+      description: Add relationships, objects, and events from the csv file that has already been specified in the fields
+      parameters:
+      - in: query
+        name: type_object
+        type: string
+        description: Type needs more
+        required: true
+        enum:
+            - Continent
+            - Country
+            - Event
+            - Internaltional_Group
+            - Party
+            - Person
+            - Personel_Group
+            - Relationship
+      - in: query
+        name: path
+        type: string
+        description: Path of csv file, other file not yet supported
+        required: true
+      responses:
+        200:
+          description: "Success added"
+        201:
+          description: "Error added"
+
+
+
+
+
+
+############################# DATABASE MODEL ########################################
+definitions:
+
+  ###### Node ######
+  NODE:
+    type: object
+  RELATIONSHIPS:
+    type: object
+  RELATIONSHIP:
+    type: object
+    properties:
+      labels_node1:
+        type: string
+        description: Labels of Node
+        enum:
+          - Continent
+          - Country
+          - Event
+          - Internaltional_Group
+          - Party
+          - Person
+          - Personel_Group
+      name_node1:
+        type: string
+        description: Name of Node
+      labels_node2:
+        type: string
+        description: Full Name of Node
+        enum:
+          - Continent
+          - Country
+          - Event
+          - Internaltional_Group
+          - Party
+          - Person
+          - Personel_Group
+      name_node2:
+        type: string
+        description: Image of Node
+      labels:
+        type: string
+        description: Object_id of Node
+        enum:
+          - OPPOSITION
+          - ALLIANCE
+          - SUPPORTING
+          - WORK_FOR
+          - PART_IN
+          - LEADER_OF
+      name:
+        type: string
+        description: Weight of Node
+      full_name:
+        type: string
+        description: keywords of Node
+      object_id:
+        type: integer
+        description: Type of Node
+      weight:
+        type: integer
+        description: Type of Node
+      keywords:
+        type: string
+        description: Type of Node
+      areas:
+        type: string
+        description: Type of Node
+      from_date:
+        type: string
+        format: date
+        description: Datetime of Node
+        minLength: 0
+        maxLength: 10
+        default: ''
+      to_date:
+        type: string
+        format: date
+        description: Datetime of Node
+        minLength: 0
+        maxLength: 10
+        default: ''
+  CONTINENT:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name of Continent
+      full_name:
+        type: string
+        description: Full Name of Continent
+      image:
+        type: string
+        description: Image of Continent
+      object_id:
+        type: integer
+        description: Object_id of Continent
+        default: 0
+      weight:
+        type: integer
+        description: Weight of Continent
+        default: 0
+      keywords:
+        type: string
+        description: keywords of Continent
+  COUNTRY:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name of Country
+      full_name:
+        type: string
+        description: Full Name of Country
+      image:
+        type: string
+        description: Image of Country
+      object_id:
+        type: integer
+        description: Object_id of Country
+        default: 0
+      weight:
+        type: integer
+        description: Weight of Country
+        default: 0
+      keywords:
+        type: string
+        description: keywords of Country
+  INTERNALTIONAL_GROUP:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name of Internaltional Group
+      full_name:
+        type: string
+        description: Full Name of Internaltional Group
+      image:
+        type: string
+        description: Image of Internaltional Group
+      object_id:
+        type: integer
+        description: Object_id of Internaltional Group
+        default: 0
+      weight:
+        type: integer
+        description: Weight of Internaltional Group
+        default: 0
+      keywords:
+        type: string
+        description: keywords of Internaltional Group
+  PARTY:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name of Party
+      full_name:
+        type: string
+        description: Full Name of Party
+      image:
+        type: string
+        description: Image of Party
+      object_id:
+        type: integer
+        description: Object_id of Party
+        default: 0
+      weight:
+        type: integer
+        description: Weight of Party
+        default: 0
+      keywords:
+        type: string
+        description: keywords of Party
+  PERSON:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name of Person
+      full_name:
+        type: string
+        description: Full Name of Person
+      image:
+        type: string
+        description: Image of Person
+      object_id:
+        type: integer
+        description: Object_id of Person
+        default: 0
+      weight:
+        type: integer
+        description: Weight of Person
+        default: 0
+      keywords:
+        type: string
+        description: keywords of Person
+      type:
+        type: string
+        description: Type for Person
+  PERSONEL_GROUP:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name of Personel Group
+      full_name:
+        type: string
+        description: Full Name of Personel Group
+      image:
+        type: string
+        description: Image of Personel Group
+      object_id:
+        type: integer
+        description: Object_id of Personel Group
+        default: 0
+      weight:
+        type: integer
+        description: Weight of Personel Group
+        default: 0
+      keywords:
+        type: string
+        description: keywords of Personel Group
+  EVENT:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Name of Event
+      full_name:
+        type: string
+        description: Full Name of Event
+      image:
+        type: string
+        description: Image of Event
+      object_id:
+        type: integer
+        description: Object_id of Event
+        default: 0
+      weight:
+        type: integer
+        description: Weight of Event
+        default: 0
+      keywords:
+        type: string
+        description: keywords of Event
+      type:
+        type: string
+        description: Type for Event
+        enum:
+          - Meeting
+          - Report
+          - Speech
+          - Notes
+          - Join
+          - Signature
+          - Resign
+          - Violent
+          - Armed
+      date_time:
+        type: string
+        format: date
+        description: Datetime of Event
+        minLength: 0
+        maxLength: 10
+        default: ''
+      location:
+        type: string
+        description: Location for Event
+      object:
+        type: string
+        description: List object relationship for Event
+      object_rels:
+        type: string
+        description: Type object relationship for Event
+        enum:
+          - Liên quan
+          - Chủ trì
+          - Tham dự
+          - Phản đối
+          - Xung đột
+  NEO4J_CONDITIONS:
+    type: object

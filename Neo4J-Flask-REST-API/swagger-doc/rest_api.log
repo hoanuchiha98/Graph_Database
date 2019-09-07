@@ -1,0 +1,128 @@
+ * Serving Flask app "connect" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "server.py", line 39, in <module>
+    connex_app.run(port=5011, debug=True)
+  File "/home/hoan/virtualenv/neo4j_rest__env/lib/python3.7/site-packages/connexion/apps/flask_app.py", line 93, in run
+    self.app.run(self.host, port=self.port, debug=self.debug, **options)
+  File "/home/hoan/virtualenv/neo4j_rest__env/lib/python3.7/site-packages/flask/app.py", line 943, in run
+    run_simple(host, port, self, **options)
+  File "/home/hoan/virtualenv/neo4j_rest__env/lib/python3.7/site-packages/werkzeug/serving.py", line 987, in run_simple
+    s.bind(server_address)
+OSError: [Errno 98] Address already in use
+ * Serving Flask app "connect" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5011/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 403-445-630
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/css/typography.css HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/lib/jquery.wiggle.min.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/css/screen.css HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/lib/object-assign-pollyfill.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/css/reset.css HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/lib/jquery.ba-bbq.min.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/lib/jquery.slideto.min.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/lib/jquery-1.8.0.min.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/lib/handlebars-4.0.5.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/lib/lodash.min.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/lib/backbone-min.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/lib/highlight.9.1.0.pack.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/swagger-ui.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/lib/highlight.9.1.0.pack_extended.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/lib/swagger-oauth.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/lib/jsoneditor.min.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:25] "GET /api/ui/lib/marked.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:26] "GET /api/ui/css/print.css HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:26] "GET /api/ui/images/logo_small.png HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:07:27] "GET /api/swagger.json HTTP/1.1" 200 -
+ * Serving Flask app "connect" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5011/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 202-484-466
+42.118.114.254 - - [05/Sep/2019 09:09:03] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:04] "GET /api/swagger.json HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:12] "GET / HTTP/1.1" 302 -
+42.118.114.254 - - [05/Sep/2019 09:09:12] "GET /api/ui HTTP/1.1" 308 -
+42.118.114.254 - - [05/Sep/2019 09:09:12] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/css/typography.css HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/css/screen.css HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/css/reset.css HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/lib/object-assign-pollyfill.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/lib/jquery-1.8.0.min.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/lib/jquery.slideto.min.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/lib/handlebars-4.0.5.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/lib/lodash.min.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/lib/jquery.wiggle.min.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/lib/jquery.ba-bbq.min.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/lib/backbone-min.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/swagger-ui.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/lib/highlight.9.1.0.pack.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/lib/jsoneditor.min.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/lib/marked.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/lib/highlight.9.1.0.pack_extended.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/lib/swagger-oauth.js HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/images/logo_small.png HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/css/print.css HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/swagger.json HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:13] "GET /api/ui/images/favicon-32x32.png HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:22] "GET /api/ui/images/throbber.gif HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:27] "GET /api/relationships HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:35] "GET /api/node HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:09:40] "GET /api/ui/images/throbber.gif HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:11:09] "GET /api/node HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:12:03] "GET /api/relationships HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:22:08] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:22:08] "GET /api/swagger.json HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:23:40] "PUT /api/search/object_event?list_label=Country%2C%20Person&list_object=Viet%20Nam%2C%20USA%2C%20Hong%20Kong&list_rel=Chủ%20trì%2C%20Đồng%20minh%2C%20Phản%20đối&list_name_event=Mỹ%2C%20Triều%20Tiên%2C%20Trung%20Quố&limit=3&follow=1 HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:24:08] "PUT /api/search/object_event?list_label=%5BCountry%2C%20Person%5D&list_object=%5BViet%20Nam%2C%20USA%2C%20Hong%20Kong%5D&list_rel=%5BChủ%20trì%2C%20Đồng%20minh%2C%20Phản%20đối%5D&list_name_event=%5BMỹ%2C%20Triều%20Tiên%2C%20Trung%20Quố%5D&limit=3&follow=1 HTTP/1.1" 201 -
+42.118.114.254 - - [05/Sep/2019 09:25:09] "PUT /api/search/object_event?list_label=Country%2CPerson&list_object=Viet%20Nam%2CUSA%2CHong%20Kong&list_rel=Chủ%20trì%2CĐồng%20minh%2CPhản%20đối&list_name_event=Mỹ%2CTriều%20Tiên%2CTrung%20Quố&limit=3&follow=1 HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:25:56] "PUT /api/search/object_event?list_label=Country%2CPerson&list_object=Viet%20Nam%2CUSA%2CHong%20Kong&list_rel=Chủ%20trì%2CĐồng%20minh%2CPhản%20đối&list_name_event=Mỹ%2CTriều%20Tiên%2CTrung%20Quốc&limit=3&follow=1 HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 09:27:52] "PUT /api/search_in_neo4j HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:26:18] "PUT /api/search_in_neo4j HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:18] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:19] "GET /api/swagger.json HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:20] "GET /api/ui/images/favicon-32x32.png HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:22] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:22] "GET /api/swagger.json HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:22] "GET /api/ui/images/favicon-32x32.png HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:23] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:23] "GET /api/swagger.json HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:23] "GET /api/ui/images/favicon-32x32.png HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:23] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:24] "GET /api/swagger.json HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:24] "GET /api/ui/images/favicon-32x32.png HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:24] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:24] "GET /api/swagger.json HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:25] "GET /api/ui/images/favicon-32x32.png HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:25] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:25] "GET /api/swagger.json HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:26] "GET /api/ui/images/favicon-32x32.png HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:27] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:28] "GET /api/swagger.json HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:28] "GET /api/ui/images/favicon-32x32.png HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:28] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:29] "GET /api/swagger.json HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:29] "GET /api/ui/images/favicon-32x32.png HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:29] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:29] "GET /api/swagger.json HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:29] "GET /api/ui/images/favicon-32x32.png HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:31] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:31] "GET /api/swagger.json HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:32] "GET /api/ui/images/favicon-32x32.png HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:42] "GET / HTTP/1.1" 302 -
+42.118.114.254 - - [05/Sep/2019 10:44:42] "GET /api/ui HTTP/1.1" 308 -
+42.118.114.254 - - [05/Sep/2019 10:44:42] "GET /api/ui/ HTTP/1.1" 200 -
+42.118.114.254 - - [05/Sep/2019 10:44:42] "GET /api/swagger.json HTTP/1.1" 200 -

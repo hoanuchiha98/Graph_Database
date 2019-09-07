@@ -1,0 +1,11 @@
+# search object_event
+list_label: Country, Person
+list_object: Viet Nam, USA, Hong Kong
+list_rel: Chủ trì, Đồng minh, Phản đối
+list_name_event: Mỹ, Triều Tiên, Trung Quốc
+Limit: 3
+Follow_object: 1
+{
+  "from_date": "2018-10-10",
+  "to_date": "2021-10-10"
+}
