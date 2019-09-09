@@ -47,7 +47,7 @@ paths:
         description: The list of labels has been defined
         schema:
           type: object
-          $ref: "#/definitions/NODE"
+          $ref: "#/definitions/NODES"
       responses:
         200:
           description: "Success"
@@ -169,7 +169,7 @@ paths:
         description: The list of type has been defined
         schema:
           type: object
-          $ref: "#/definitions/RELATIONSHIP"
+          $ref: "#/definitions/RELATIONSHIPS"
       responses:
         200:
           description: "Success"
@@ -188,7 +188,7 @@ paths:
         description: The list of labels has been defined
         schema:
           type: object
-          $ref: "#/definitions/RELATIONSHIP"
+          $ref: "#/definitions/RELATIONSHIPS"
       responses:
         200:
           description: "Success"
