@@ -12,6 +12,7 @@ basePath: "/api"
 
 # Paths supported by the server application
 paths:
+  #NODES
   /nodes:
     post:
       operationId: api.controllers.nodes.create_node
@@ -63,57 +64,6 @@ paths:
           description: "Success"
           schema:
             type: object
-  /relationships:
-    post:
-      operationId: api.controllers.relationships.create_relationship
-      produces:
-        - "application/json"
-      tags:
-        - Relationships
-      summary: Create Relationships
-      description: Create Relationships
-      parameters:
-      - name: rels
-        in: body
-        required: true
-        description: The list of labels has been defined
-        schema:
-          type: object
-          $ref: "#/definitions/RELATIONSHIPS"
-      responses:
-        200:
-          description: "Success"
-    put:
-      operationId: api.controllers.relationships.update_relationship
-      produces:
-        - "application/json"
-      tags:
-        - Relationships
-      summary: Update Relationships
-      description: Update Relationships
-      parameters:
-      - name: rels
-        in: body
-        description: The list of labels has been defined
-        schema:
-          type: object
-          $ref: "#/definitions/RELATIONSHIPS"
-      responses:
-        200:
-          description: "Success"
-    get:
-      operationId: api.controllers.relationships.find_all_relationship_type
-      produces:
-        - "application/json"
-      tags:
-        - Relationships
-      summary: Find All Relationship type
-      description: Find All Relationship type
-      responses:
-        200:
-          description: "Success"
-          schema:
-            type: object
   /node/find_all_fileds_keys:
     put:
       operationId: api.controllers.nodes.find_all_node_field
@@ -135,7 +85,7 @@ paths:
           description: "Success"
   /node/find_all_feild_value:
     put:
-      operationId: api.controllers.nodes.find_all_progesties_with_field
+      operationId: api.controllers.nodes.find_all_progesties_nodes_with_field
       produces:
         - "application/json"
       tags:
@@ -152,6 +102,99 @@ paths:
       responses:
         200:
           description: "Success"
+  #RELATIONSHIPS
+  /relationships:
+    post:
+      operationId: api.controllers.relationships.create_relationship
+      produces:
+        - "application/json"
+      tags:
+        - Relationships
+      summary: Create Relationships
+      description: Create Relationships
+      parameters:
+        - name: rels
+          in: body
+          required: true
+          description: The list of labels has been defined
+          schema:
+            type: object
+            $ref: "#/definitions/RELATIONSHIPS"
+      responses:
+        200:
+          description: "Success"
+    put:
+      operationId: api.controllers.relationships.update_relationship
+      produces:
+        - "application/json"
+      tags:
+        - Relationships
+      summary: Update Relationships
+      description: Update Relationships
+      parameters:
+        - name: rels
+          in: body
+          description: The list of labels has been defined
+          schema:
+            type: object
+            $ref: "#/definitions/RELATIONSHIPS"
+      responses:
+        200:
+          description: "Success"
+    get:
+      operationId: api.controllers.relationships.find_all_relationship_type
+      produces:
+        - "application/json"
+      tags:
+        - Relationships
+      summary: Find All Relationship type
+      description: Find All Relationship type
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: object
+  /relationships/find_all_fileds_keys:
+    put:
+      operationId: api.controllers.relationships.find_all_relationships_field
+      produces:
+        - "application/json"
+      tags:
+        - Relationships
+      summary: Find All Feild Relationships
+      description: Find All Feild Relationships
+      parameters:
+      - name: type
+        in: body
+        description: The list of type has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/RELATIONSHIP"
+      responses:
+        200:
+          description: "Success"
+  /relationships/find_all_feild_value:
+    put:
+      operationId: api.controllers.relationships.find_all_progesties_relationships_with_field
+      produces:
+        - "application/json"
+      tags:
+        - Relationships
+      summary: Find All Progesties with Name Feilds Relationships
+      description: Find All Progesties with Name Feilds Relationships
+      parameters:
+      - name: rels
+        in: body
+        description: The list of labels has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/RELATIONSHIP"
+      responses:
+        200:
+          description: "Success"
+
+
+
 #  /relationship:
 #    post:
 #      operationId: api.controllers.relationship.create_relationship

@@ -91,9 +91,11 @@ def find_all_labels_node():
     return neo4j_connect().run("call db.labels").data()
 def find_all_node_field(labels):
     pattern = f"""MATCH(n: {labels.get("labels")}) WITH DISTINCT keys(n) AS keys UNWIND keys AS keyslisting WITH DISTINCT keyslisting AS fields RETURN fields"""
+    print(pattern)
     return neo4j_connect().run(pattern).data()
-def find_all_progesties_with_field(node):
-    pattern = f"""MATCH (n:{node.get("labels")}) return n.{node.get("feild_name")} as {node.get("feild_name")}"""
+def find_all_progesties_nodes_with_field(node):
+    pattern = f"""MATCH (n:{node.get("labels")}) return n.{node.get("field_name")} as {node.get("field_name")}"""
+    print(pattern)
     return neo4j_connect().run(pattern).data()
 if __name__ == "__main__":
     test = {

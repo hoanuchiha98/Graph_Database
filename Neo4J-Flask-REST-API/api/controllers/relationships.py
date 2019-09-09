@@ -112,6 +112,14 @@ def update_relationship(rels):
         print(pattern_find)
         return export_json_relationship(pattern_find)
 
+def find_all_relationships_field(type):
+    pattern = f"""MATCH(n)-[r:{{{type.get("type")}}}]-(p) WITH DISTINCT keys(r) AS keys UNWIND keys AS keyslisting WITH DISTINCT keyslisting AS fields RETURN fields"""
+    return neo4j_connect().run(pattern).data()
+
+def find_all_progesties_relationships_with_field(rels):
+    pattern = f"""MATCH (n)-[r:`{{{rels.get("field_name")}}}`]-(p) return n.{rels.get("field_name")} as {rels.get("field_name")}"""
+    return neo4j_connect().run(pattern).data()
+
 if __name__ == "__main__":
     test = {
         "Movies":{
