@@ -1,11 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d3233a55-3d10-4867-8959-a43252cd2a01" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/Neo4J.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/NEO4J-Swagger-REST-API.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/controllers/nodes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/controllers/relationships.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/controllers/search_neo4j.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/.idea/Neo4J-Flask-API.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/controllers/continent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/controllers/country.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/controllers/event.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/controllers/import_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/controllers/internaltional_group.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/controllers/nodes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/controllers/party.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/controllers/person.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/controllers/personel_group.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/controllers/relationship.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/controllers/relationships.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/controllers/search_neo4j.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/controllers/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/models/node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/api/models/nodes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/connect.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/database.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/sample_test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/server.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/static/css/home.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/static/js/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/swagger-doc/rest_api.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/swagger-doc/start_neo4j_api.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/swagger-doc/swagger.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/test_data/continent.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/test_data/country.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/test_data/event.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/test_data/internaltional_group.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/test_data/party.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/test_data/person.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Neo4J-Flask-REST-API/test_data/personel_group.csv" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Flask Main" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1Qbd74w3jmMmbBQIPWSwSOF9tJ6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="NEO4J-Swagger-REST-API" type="Python.FlaskServer">
@@ -23,5 +104,36 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d3233a55-3d10-4867-8959-a43252cd2a01" name="Default Changelist" comment="" />
+      <created>1568043058381</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568043058381</updated>
+      <workItem from="1568043060453" duration="109000" />
+      <workItem from="1568044607116" duration="6000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

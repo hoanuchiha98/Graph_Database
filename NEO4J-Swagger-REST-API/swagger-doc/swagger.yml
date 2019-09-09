@@ -1,0 +1,260 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger REST Article
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/api"
+
+# Paths supported by the server application
+paths:
+  #NODES
+  /nodes:
+    post:
+      operationId: api.controllers.nodes.create_node
+      produces:
+        - "application/json"
+      tags:
+        - Nodes
+      summary: Create Nodes
+      description: Create Nodes
+      parameters:
+      - name: node
+        in: body
+        required: true
+        description: The json defined node
+        schema:
+          type: object
+          $ref: "#/definitions/NODES"
+      responses:
+        200:
+          description: "Success"
+    put:
+      operationId: api.controllers.nodes.update_node
+      produces:
+        - "application/json"
+      tags:
+        - Nodes
+      summary: Update Nodes
+      description: Update Nodes
+      parameters:
+      - name: node
+        in: body
+        description: The list of labels has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/NODE"
+      responses:
+        200:
+          description: "Success"
+    get:
+      operationId: api.controllers.nodes.find_all_labels_node
+      produces:
+        - "application/json"
+      tags:
+        - Nodes
+      summary: Find All Labels Nodes
+      description: Find All Labels Nodes
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: object
+  /nodes/find_all_fileds_keys:
+    put:
+      operationId: api.controllers.nodes.find_all_node_field
+      produces:
+        - "application/json"
+      tags:
+        - Nodes
+      summary: Find All Feild Nodes
+      description: Find All Feild Nodes
+      parameters:
+      - name: labels
+        in: body
+        description: The list of labels has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/NODES"
+      responses:
+        200:
+          description: "Success"
+  /nodes/find_all_feild_value:
+    put:
+      operationId: api.controllers.nodes.find_all_progesties_nodes_with_field
+      produces:
+        - "application/json"
+      tags:
+        - Nodes
+      summary: Find All Progesties with Name Feilds Nodes
+      description: Find All Progesties with Name Feilds Nodes
+      parameters:
+      - name: node
+        in: body
+        description: The list of labels has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/NODES"
+      responses:
+        200:
+          description: "Success"
+  #RELATIONSHIPS
+  /relationships:
+    post:
+      operationId: api.controllers.relationships.create_relationship
+      produces:
+        - "application/json"
+      tags:
+        - Relationships
+      summary: Create Relationships
+      description: Create Relationships
+      parameters:
+        - name: rels
+          in: body
+          required: true
+          description: The list of labels has been defined
+          schema:
+            type: object
+            $ref: "#/definitions/RELATIONSHIPS"
+      responses:
+        200:
+          description: "Success"
+    put:
+      operationId: api.controllers.relationships.update_relationship
+      produces:
+        - "application/json"
+      tags:
+        - Relationships
+      summary: Update Relationships
+      description: Update Relationships
+      parameters:
+        - name: rels
+          in: body
+          description: The list of labels has been defined
+          schema:
+            type: object
+            $ref: "#/definitions/RELATIONSHIPS"
+      responses:
+        200:
+          description: "Success"
+    get:
+      operationId: api.controllers.relationships.find_all_relationship_type
+      produces:
+        - "application/json"
+      tags:
+        - Relationships
+      summary: Find All Relationship type
+      description: Find All Relationship type
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: object
+  /relationships/find_all_fileds_keys:
+    put:
+      operationId: api.controllers.relationships.find_all_relationships_field
+      produces:
+        - "application/json"
+      tags:
+        - Relationships
+      summary: Find All Feild Relationships
+      description: Find All Feild Relationships
+      parameters:
+      - name: type
+        in: body
+        description: The list of type has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/RELATIONSHIP"
+      responses:
+        200:
+          description: "Success"
+  /relationships/find_all_feild_value:
+    put:
+      operationId: api.controllers.relationships.find_all_progesties_relationships_with_field
+      produces:
+        - "application/json"
+      tags:
+        - Relationships
+      summary: Find All Progesties with Name Feilds Relationships
+      description: Find All Progesties with Name Feilds Relationships
+      parameters:
+      - name: rels
+        in: body
+        description: The list of labels has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/RELATIONSHIP"
+      responses:
+        200:
+          description: "Success"
+
+  #SEARCH
+  /search_in_neo4j:
+    put:
+      operationId: api.controllers.search_neo4j.search_neo4j_by_json
+      produces:
+        - "application/json"
+      tags:
+        - Search
+      summary: Find objects that are related to the event
+      description: Find objects that are related to the event and objects related to them
+      parameters:
+      - name: conditions
+        in: body
+        required: true
+        description: The list of labels has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/NEO4J_CONDITIONS"
+      responses:
+        200:
+          description: "Success"
+        400:
+          description: "Fail"
+
+  #Import Node by File
+  /import_node_data:
+    put:
+      operationId: api.controllers.import_data.import_data_csv
+      produces:
+        - "application/json"
+      tags:
+        - Import
+      summary: Add data from the csv file
+      description: Add relationships, objects, and events from the csv file that has already been specified in the fields
+      parameters:
+      - name: path_files
+        in: body
+        required: true
+        description: The list of labels has been defined
+        schema:
+          type: object
+          $ref: "#/definitions/NEO4J_CONDITIONS"
+      responses:
+        200:
+          description: "Success added"
+        400:
+          description: "Error added"
+
+
+
+
+
+
+############################# DATABASE MODEL ########################################
+definitions:
+
+  ###### Node ######
+  NODES:
+    type: object
+
+  RELATIONSHIPS:
+    type: object
+
+  NEO4J_CONDITIONS:
+    type: object
